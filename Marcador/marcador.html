@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<title>Basket</title>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="estilos_marcador.css">
+  <link rel="stylesheet" href="cronometro.css">
+
+  <script src="scrypt_crono.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  
+</head>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="../index.html">INICIO</a>
+        </div>
+
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="marcador.html">MARCADOR</a></li>
+              <li><a href="../Administar/Administrar.html">ADMINISTRAR</a></li>
+            </ul>
+          </div>
+    </div>
+</nav>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+    <div>
+        
+        
+        <div id="contenedor">
+                <div class="reloj" id="Horas">00</div>
+                <div class="reloj" id="Minutos">:00</div>
+                <div class="reloj" id="Segundos">:00</div>
+                <div class="reloj" id="Centesimas">:00</div>
+                <input type="button" class="boton" id="inicio" value="Start &#9658;" onclick="inicio();">
+                <input type="button" class="boton" id="parar" value="Stop &#8718;" onclick="parar();" disabled>
+                <input type="button" class="boton" id="continuar" value="Resume &#8634;" onclick="inicio();" disabled>
+                <input type="button" class="boton" id="reinicio" value="Reset &#8635;" onclick="reinicio();" disabled>
+            </div>
+      </div>
+
+<!--Cronometro -->
+<div id="about" class="container-fluid">
+        <div class="row">
+          <div class="col-sm-8">
+
+
+<center> 
+
+<html lang="es">
+
+<head>
+	<script>
+	var inicio=0;
+	var timeout=0;
+ 
+	function empezarDetener(elemento)
+	{
+		if(timeout==0)
+		{
+			//Empezar el cronometro
+ 
+			elemento.value="Detener";
+ 
+			//Obtenemos el valor actual
+			inicio=vuelta=new Date().getTime();
+ 
+			//iniciamos el proceso
+			funcionando();
+		}else{
+			//Detener el cronometro
+ 
+			elemento.value="Empezar";
+			clearTimeout(timeout);
+			timeout=0;
+		}
+	}
+ 
+	function funcionando()
+	{
+		// obteneos la fecha actual
+		var actual = new Date().getTime();
+ 
+		// obtenemos la diferencia entre la fecha actual y la de inicio
+		var diff=new Date(actual-inicio);
+ 
+		// mostramos la diferencia entre la fecha actual y la inicial
+		var result=LeadingZero(diff.getUTCHours())+":"+LeadingZero(diff.getUTCMinutes())+":"+LeadingZero(diff.getUTCSeconds());
+		document.getElementById('crono').innerHTML = result;
+ 
+		// Indicamos que se ejecute esta función nuevamente dentro de 1 segundo
+		timeout=setTimeout("funcionando()",1000);
+	}
+ 
+	/* Funcion que pone un 0 delante de un valor si es necesario */
+	function LeadingZero(Time) {
+		return (Time < 10) ? "0" + Time : + Time;
+	}
+	</script>
+ 
+	<style>
+	.crono_wrapper {text-align:center;width:200px;}
+	</style>
+</head>
+ 
+<body>
+ 
+<h1>Time</h1>
+ 
+<div class="crono_wrapper">
+	<h2 id='crono'>00:00:00</h2>
+	<input type="button" value="Empezar" onclick="empezarDetener(this);">
+</div>
+ 
+</body>
+</html>
+</center>
+
+
+   
+</html>
