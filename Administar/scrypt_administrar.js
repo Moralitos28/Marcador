@@ -28,7 +28,7 @@ document.getElementById("goleslocal").innerHTML = goleslocal;
    
 }
 
-var inicio=0;
+var inicial=0;
 var timeout=0;
 
 function empezarDetener(elemento)
@@ -40,7 +40,7 @@ function empezarDetener(elemento)
         elemento.value="Detener";
 
         //Obtenemos el valor actual
-        inicio=vuelta=new Date().getTime();
+        inicial=vuelta=new Date().getTime();
 
         //iniciamos el proceso
         funcionando();

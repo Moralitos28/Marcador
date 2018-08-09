@@ -24,7 +24,7 @@ h4 {
     font-family: Montserrat, sans-serif;
 }
 .container-fluid {
-    padding: 60px 250px;
+    padding: 60px 50px;
 }
 .bg-grey {
     background-color: #f6f6f6;
@@ -139,10 +139,6 @@ footer .glyphicon {
     animation-duration: 1s;
     -webkit-animation-duration: 1s;
     visibility: visible;
-}
-.crono_wrapper {
-    text-align:center;
-    width:200px;
 }
 @keyframes slide {
   0% {

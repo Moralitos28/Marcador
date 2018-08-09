@@ -3,19 +3,20 @@
 <title>Basket</title>
 
 <head>
-  
+
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="estilos_administrar.css">
+  <link rel="stylesheet" href="estilo_administrar.css">
   <link rel="stylesheet" href="cronometro.css">
 
   <script src="scrypt_crono.js"></script>
-  <script src="scrypt_administart.js"></script>
+  <script src="scrypt_administrar.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 </head>
 
@@ -27,82 +28,72 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">Inicio</a>
-
+      <a class="navbar-brand" href="../index.html">INICIO</a>
     </div>
+
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li>
-          <a href="../marcador/marcador.html">MARCADOR</a>
+          <a href="../Marcador/marcador.html">MARCADOR</a>
         </li>
         <li>
-          <a href="../Marcador/marcador.html">ADMINISTRAR</a>
+          <a href="../Administar/Administrar.html">ADMINISTRAR</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+<div id="about" class="container-fluid">
+  <div class="row"> </div>
+  <div class="col-sm-8"> </div>
 
-  <div id="about" class="container-fluid"> 
-      <div class="row"> </div>
-      <div class="col-sm-8"> </div>
-  
-    
-      
+  <h1>Chronometrer</h1>
 
+  <div id="contenedor">
+    <div class="reloj" id="Horas">00</div>
+    <div class="reloj" id="Minutos">:00</div>
+    <div class="reloj" id="Segundos">:00</div>
+    <div class="reloj" id="Centesimas">:00</div>
+    <input type="button" class="boton" id="inicio" value="Start ►" onclick="inicio();">
+    <input type="button" class="boton" id="parar" value="Stop ∎" onclick="parar();" disabled="">
+    <input type="button" class="boton" id="continuar" value="Resume ↺" onclick="inicio();" disabled="">
+    <input type="button" class="boton" id="reinicio" value="Reset ↻" onclick="reinicio();" disabled="">
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
 
-        
-        <h1>Chronometrer</h1>
-      
-        <div id="contenedor">
-          <div class="reloj" id="Horas">00</div>
-          <div class="reloj" id="Minutos">:00</div>
-          <div class="reloj" id="Segundos">:00</div>
-          <div class="reloj" id="Centesimas">:00</div>
-          <input type="button" class="boton" id="inicio" value="Start ►" onclick="inicio();">
-          <input type="button" class="boton" id="parar" value="Stop ∎" onclick="parar();" disabled="">
-          <input type="button" class="boton" id="continuar" value="Resume ↺" onclick="inicio();" disabled="">
-          <input type="button" class="boton" id="reinicio" value="Reset ↻" onclick="reinicio();" disabled="">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-        
-      </div>
-  
-         <!--Funcion de botones de gol local-->
-        <div class="botones_conteiner">
-        
-          <!--Botones de gol local-->
-          <br>
-          <br>
-          <br>
-          <pre>Nuevo gol local             Nuevo gol visi</pre>
-          <pre><button onclick="AgregarGolLocal()">+ Gol </button>                     <button onclick="AgregarGolVisi()">+ Gol</button></pre>
-  
-  
-          <pre>Anular gol local            Anular gol visi</pre>
-          <pre><button onclick="QuitarGolLocal()">- Gol</button>                      <button onclick="QuitarGolVisi()">- Gol</button></pre>
-          <pre> <p id="goleslocal"></p>  <p id="golesvisi"></p> </pre>
-  
-          <!-- Botones de falta local-->
-          <pre>Falta local                 Falta visi</pre>
-          <pre><button onclick="Agregarfaltalocal()">+ Falta Local</button>             <button onclick="Agregarfaltavisi()">+ Falta visi</button></pre>
-  
-          <pre>Anular falta local          Anular falta visi</pre>
-          <pre><button onclick="Quitarfaltalocal()">- Falta Local</button>             <button onclick="Quitarfaltavisi()">- Falta visi</button></pre>
-          <pre><p id="faltaslocal"> </p><p id="faltasvisi"></p> </pre>
-          <br>
-          <br>
-          <br>
-  
-        </div>
+<!--Funcion de botones de gol local-->
+<div class="botones_conteiner">
+
+  <!--Botones de gol local-->
+  <br>
+  <br>
+  <br>
+  <pre>Nuevo gol local             Nuevo gol visi</pre>
+  <pre><button onclick="AgregarGolLocal()">+ Gol </button>                     <button onclick="AgregarGolVisi()">+ Gol</button></pre>
 
 
+  <pre>Anular gol local            Anular gol visi</pre>
+  <pre><button onclick="QuitarGolLocal()">- Gol</button>                      <button onclick="QuitarGolVisi()">- Gol</button></pre>
+  <pre> <p id="goleslocal"></p>  <p id="golesvisi"></p> </pre>
 
-         
-        </html>
+  <!-- Botones de falta local-->
+  <pre>Falta local                 Falta visi</pre>
+  <pre><button onclick="Agregarfaltalocal()">+ Falta Local</button>             <button onclick="Agregarfaltavisi()">+ Falta visi</button></pre>
+
+  <pre>Anular falta local          Anular falta visi</pre>
+  <pre><button onclick="Quitarfaltalocal()">- Falta Local</button>             <button onclick="Quitarfaltavisi()">- Falta visi</button></pre>
+  <pre><p id="faltaslocal"> </p><p id="faltasvisi"></p> </pre>
+  <br>
+  <br>
+  <br>
+
+</div>
+
+</div>
+
+
+</html>
